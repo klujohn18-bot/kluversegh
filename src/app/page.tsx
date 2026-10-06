@@ -1,10 +1,15 @@
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Features from "./components/Features";
-import Philosophy from "./components/Philosophy";
-import Protocol from "./components/Protocol";
-import Pricing from "./components/Pricing";
-import Footer from "./components/Footer";
+"use client";
+import dynamic from "next/dynamic";
+
+// Dynamically import all animated components with ssr:false
+// This prevents hydration mismatches from GSAP, intervals, and live state
+const Navbar     = dynamic(() => import("./components/Navbar"),     { ssr: false });
+const Hero       = dynamic(() => import("./components/Hero"),       { ssr: false });
+const Features   = dynamic(() => import("./components/Features"),   { ssr: false });
+const Philosophy = dynamic(() => import("./components/Philosophy"), { ssr: false });
+const Protocol   = dynamic(() => import("./components/Protocol"),   { ssr: false });
+const Pricing    = dynamic(() => import("./components/Pricing"),    { ssr: false });
+const Footer     = dynamic(() => import("./components/Footer"),     { ssr: false });
 
 export default function Home() {
   return (
