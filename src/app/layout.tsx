@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Cormorant_Garamond, IBM_Plex_Mono } from "next/font/google";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -40,6 +41,7 @@ export default function RootLayout({
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-[#F2F0E9] overflow-x-hidden">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
